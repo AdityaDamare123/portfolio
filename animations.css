@@ -1,55 +1,252 @@
-/* Add this at the END of your existing style.css */
+/* =========================================================
+   FUTURE TECH ANIMATIONS & MICRO-INTERACTIONS
+   ========================================================= */
 
-/* Hero entrance */
-.hero-content > * { animation: rise-in .7s both cubic-bezier(.16,1,.3,1); }
-.hero-content .badge { animation-delay: .05s; }
-.hero-content .small-title { animation-delay: .12s; }
-.hero-content h1 { animation-delay: .19s; }
-.hero-content h2 { animation-delay: .26s; }
-.hero-content .hero-description { animation-delay: .33s; }
-.hero-content .hero-buttons { animation-delay: .4s; }
-.hero-content .socials { animation-delay: .47s; }
-.hero-visual { animation: pop-in 1s .2s both cubic-bezier(.16,1,.3,1); transition: transform .18s ease-out; }
-
-@keyframes rise-in { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:translateY(0); } }
-@keyframes pop-in { from { opacity:0; transform:scale(.82); } to { opacity:1; transform:scale(1); } }
-
-/* A glowing typing caret */
-#typing { display:inline-block; min-width:1ch; color:var(--accent); }
-#typing::after { content:"|"; color:var(--accent); margin-left:4px; animation: blink .75s steps(1) infinite; }
-@keyframes blink { 50% { opacity:0; } }
-
-/* Tech-grid texture and cursor glow */
-body::before { content:""; position:fixed; inset:0; z-index:-1; pointer-events:none; opacity:.25; background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px); background-size:48px 48px; mask-image:linear-gradient(to bottom,black,transparent 75%); }
-.cursor-glow { width:340px; height:340px; border-radius:50%; position:fixed; pointer-events:none; z-index:-1; background:radial-gradient(circle,rgba(0,229,255,.1),transparent 65%); transform:translate(-50%,-50%); transition:left .14s ease-out,top .14s ease-out; }
-
-/* Interactive cards */
-.glass-card,.skill-card,.project-card,.coding-card { transform-style:preserve-3d; }
-.glass-card,.skill-card,.project-card,.coding-card { transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .35s,box-shadow .35s; }
-.skill-card:hover,.project-card:hover { box-shadow:0 20px 45px rgba(0,229,255,.08),inset 0 1px 0 rgba(255,255,255,.05); }
-.project-card { position:relative; overflow:hidden; }
-.project-card::before { content:""; position:absolute; width:200px; height:200px; border-radius:50%; background:rgba(0,229,255,.12); filter:blur(25px); top:-105px; right:-95px; opacity:0; transition:opacity .35s; }
-.project-card:hover::before { opacity:1; }
-
-/* Progress bars animate into view */
-.skill-line span { width:0 !important; transition:width 1.15s cubic-bezier(.16,1,.3,1); }
-.skill-card.active .skill-line span { width:var(--level) !important; }
-
-/* Nav and mobile drawer */
-header { transition:background .3s,box-shadow .3s; }
-header.scrolled { background:rgba(5,7,10,.9); box-shadow:0 10px 30px rgba(0,0,0,.18); }
-.nav-links a { position:relative; }
-.nav-links a::after { content:""; position:absolute; height:1px; background:var(--accent); left:0; right:0; bottom:-7px; transform:scaleX(0); transform-origin:right; transition:transform .25s; }
-.nav-links a:hover::after { transform:scaleX(1); transform-origin:left; }
-
-@media(max-width:900px) {
-  .nav-links.mobile-active { display:flex; position:absolute; top:calc(100% + 1px); right:14px; left:14px; flex-direction:column; align-items:center; gap:0; padding:14px; background:rgba(10,14,20,.96); backdrop-filter:blur(18px); border:1px solid var(--border); border-radius:14px; box-shadow:0 20px 40px rgba(0,0,0,.3); animation:menu-in .25s ease-out; }
-  .nav-links.mobile-active li { width:100%; text-align:center; }
-  .nav-links.mobile-active a { display:block; padding:12px; }
-  .menu-btn { cursor:pointer; transition:transform .25s; }
-  .menu-btn.open { transform:rotate(90deg); }
-  .cursor-glow { display:none; }
+/* Hero Text & Stagger Entrance */
+@keyframes riseIn {
+    0% {
+        opacity: 0;
+        transform: translateY(28px);
+        filter: blur(4px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
 }
-@keyframes menu-in { from { opacity:0; transform:translateY(-10px); } to { opacity:1; transform:translateY(0); } }
 
-@media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; scroll-behavior:auto !important; } .cursor-glow { display:none; } }
+@keyframes popScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+    70% {
+        transform: scale(1.03);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Float Animation */
+@keyframes smoothFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(1deg);
+    }
+}
+
+@keyframes smoothFloatReverse {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(10px) rotate(-1deg);
+    }
+}
+
+/* Ambient Background Orbs */
+@keyframes orbMorph {
+    0% {
+        transform: translate(0, 0) scale(1);
+        border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    }
+    33% {
+        transform: translate(50px, -40px) scale(1.15);
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+    66% {
+        transform: translate(-40px, 30px) scale(0.9);
+        border-radius: 30% 70% 60% 40% / 50% 60% 30% 60%;
+    }
+    100% {
+        transform: translate(0, 0) scale(1);
+        border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    }
+}
+
+/* Orbital Rings 3D Rotation */
+@keyframes ringSpinCW {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    50% {
+        transform: rotate(180deg) scale(1.02);
+    }
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+@keyframes ringSpinCCW {
+    0% {
+        transform: rotate(360deg) scale(1);
+    }
+    50% {
+        transform: rotate(180deg) scale(0.98);
+    }
+    100% {
+        transform: rotate(0deg) scale(1);
+    }
+}
+
+/* Glowing Pulse */
+@keyframes neonPulse {
+    0%, 100% {
+        box-shadow: 0 0 25px var(--accent-glow), inset 0 0 15px var(--accent-glow);
+    }
+    50% {
+        box-shadow: 0 0 45px var(--accent-glow), 0 0 80px var(--accent-glow-soft), inset 0 0 25px var(--accent-glow);
+    }
+}
+
+/* Glowing Border Sweep */
+@keyframes borderGlowSweep {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Radar Scan Wave */
+@keyframes radarWave {
+    0% {
+        transform: scale(0.95);
+        opacity: 0.9;
+    }
+    70% {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+}
+
+/* Shimmer Light Bar */
+@keyframes shimmerPass {
+    0% {
+        transform: translateX(-120%) skewX(-20deg);
+    }
+    100% {
+        transform: translateX(220%) skewX(-20deg);
+    }
+}
+
+/* Digital Glitch / Glow Shift */
+@keyframes textGradientShift {
+    0% {
+        background-position: 0% center;
+    }
+    50% {
+        background-position: 100% center;
+    }
+    100% {
+        background-position: 0% center;
+    }
+}
+
+/* Live Terminal Cursor Blink */
+@keyframes cursorBlink {
+    0%, 49% {
+        opacity: 1;
+    }
+    50%, 100% {
+        opacity: 0;
+    }
+}
+
+/* Badge Beacon Ripple */
+@keyframes beaconPulse {
+    0% {
+        box-shadow: 0 0 0 0 var(--accent);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(0, 229, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 229, 255, 0);
+    }
+}
+
+/* Click Particle Spark */
+@keyframes particleFadeOut {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(var(--dx), var(--dy)) scale(0);
+    }
+}
+
+/* Timeline Node Glow Pulse */
+@keyframes timelineNodeGlow {
+    0%, 100% {
+        box-shadow: 0 0 0 0 var(--accent-glow);
+    }
+    50% {
+        box-shadow: 0 0 14px 4px var(--accent-glow);
+    }
+}
+
+/* Matrix Rain Canvas Fade-in */
+@keyframes matrixFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.18;
+    }
+}
+
+/* Toast Notification Entrance */
+@keyframes toastSlideUp {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 20px) scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, 0) scale(1);
+    }
+}
+
+@keyframes toastSlideDown {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, 0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, 20px) scale(0.9);
+    }
+}
+
+/* Accessible Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    .cursor,
+    .cursor-dot,
+    .cursor-glow {
+        display: none !important;
+    }
+}
