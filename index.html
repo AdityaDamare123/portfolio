@@ -3,556 +3,796 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aditya Damare - Computer Engineering Student, DSA Enthusiast, Python Developer, and AI/ML Explorer based in Pune, India.">
+    <meta name="keywords" content="Aditya Damare, Portfolio, Computer Engineer, DSA, C++, Python, AI, Machine Learning, Web Developer, Pune">
+    <meta name="author" content="Aditya Damare">
+    
+    <title>Aditya Damare | Future Tech Portfolio & Software Engineer</title>
 
-    <title>Aditya Damare | Portfolio</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
+    <!-- CSS Stylesheets -->
     <link rel="stylesheet" href="animations.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- Scroll Progress -->
+    <!-- Scroll Progress Indicator -->
     <div class="scroll-progress"></div>
 
-    <!-- Cursor -->
+    <!-- Custom Cursor & Trailing Dot -->
     <div class="cursor"></div>
     <div class="cursor-dot"></div>
+    <div class="cursor-glow"></div>
 
-    <!-- Particle Background -->
+    <!-- Sparkle Particles Container -->
+    <div class="sparkle-container"></div>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Interactive Background Layers -->
     <canvas id="particles"></canvas>
-
-    <!-- Grid Background -->
+    <canvas id="matrixCanvas"></canvas>
     <div class="grid-bg"></div>
 
-    <!-- Back To Top -->
-    <button id="backTop">↑</button>
-
-    <!-- Background -->
-    <div class="background">
+    <div class="background-orbs">
         <div class="orb orb1"></div>
         <div class="orb orb2"></div>
         <div class="orb orb3"></div>
     </div>
 
-    <!-- Navbar -->
+    <!-- Back to Top Button -->
+    <button id="backTop" aria-label="Back to Top">↑</button>
+
+    <!-- Header & Navigation -->
     <header>
         <nav class="navbar">
-
             <a href="#home" class="logo">
-                Aditya<span>.</span>
+                <span class="logo-badge">A</span>
+                <span class="logo-text">Aditya<span>.</span></span>
             </a>
 
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#resume">Resume</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#coding">Coding</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <div class="nav-menu-wrapper">
+                <ul class="nav-links">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#terminal">CLI</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#timeline">Journey</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#coding">Profiles</a></li>
+                    <li><a href="#resume">Resume</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
 
-            <button class="menu-btn">☰</button>
+                <div class="nav-actions">
+                    <!-- Palette Theme Switcher -->
+                    <div class="theme-pill-dock" title="Switch Theme Palette">
+                        <span class="theme-dot theme-cyan active" data-theme="cyan" title="Cyber Cyan"></span>
+                        <span class="theme-dot theme-violet" data-theme="violet" title="Neon Violet"></span>
+                        <span class="theme-dot theme-emerald" data-theme="emerald" title="Matrix Emerald"></span>
+                        <span class="theme-dot theme-amber" data-theme="amber" title="Solar Amber"></span>
+                    </div>
 
+                    <button class="menu-btn" aria-label="Toggle navigation menu">☰</button>
+                </div>
+            </div>
         </nav>
     </header>
 
-
-    <!-- Hero -->
+    <!-- =========================================================
+         HERO SECTION
+         ========================================================= -->
     <section id="home" class="hero">
-
         <div class="hero-content">
-
-            <div class="badge">
-                <span class="dot"></span>
-                Available for Opportunities
+            <!-- Beacon Status Badge -->
+            <div class="status-badge">
+                <span class="beacon-dot"></span>
+                <span>Available for Tech Opportunities</span>
             </div>
 
-            <p class="small-title">HELLO, I'M</p>
+            <p class="hero-greeting">// HELLO WORLD, I'M</p>
 
-            <h1>
-                Aditya <span>Damare</span>
+            <h1 class="hero-title">
+                Aditya <span class="name-highlight">Damare</span>
             </h1>
 
-            <h2>
-                I'm a <span id="typing"></span>
-            </h2>
+            <div class="hero-subtitle">
+                <span>Building with</span>
+                <span id="typing"></span>
+                <span class="typing-caret"></span>
+            </div>
 
             <p class="hero-description">
-                Computer Engineering student passionate about
-                programming, DSA, Data Science, Artificial Intelligence and Machine Learning.
-                I love turning ideas into practical projects.
+                Computer Engineering student passionate about <strong>Data Structures & Algorithms</strong>, 
+                <strong>Data Science</strong>, <strong>Artificial Intelligence</strong>, and <strong>Machine Learning</strong>. 
+                Dedicated to engineering high-performance software and turning complex ideas into elegant, impactful solutions.
             </p>
 
             <div class="hero-buttons">
-
-                <a href="#projects" class="btn primary">
-                    View My Work →
+                <a href="#projects" class="btn btn-primary btn-shimmer btn-magnetic">
+                    Explore Projects →
                 </a>
 
-                <a href="#contact" class="btn secondary">
+                <a href="#contact" class="btn btn-secondary btn-magnetic">
                     Let's Connect
                 </a>
 
+                <button class="btn btn-outline-copy btn-magnetic" id="copyEmailBtn" data-copy="adityad8314@gmail.com">
+                    <span>📋</span> Copy Email
+                </button>
             </div>
 
-            <div class="socials">
+            <div class="hero-socials">
+                <a href="https://github.com/AdityaDamare123" target="_blank" rel="noopener noreferrer" class="social-pill btn-magnetic" title="GitHub">
+                    <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    <span>GitHub</span>
+                </a>
 
-                <a href="https://github.com/AdityaDamare123" title="GitHub">GH</a>
-                <a href="www.linkedin.com/in/aditya-damare-90195541b" title="LinkedIn">in</a>
-                <a href="https://leetcode.com/u/AdityaDamare/" title="LeetCode">LC</a>
+                <a href="https://www.linkedin.com/in/aditya-damare-90195541b" target="_blank" rel="noopener noreferrer" class="social-pill btn-magnetic" title="LinkedIn">
+                    <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    <span>LinkedIn</span>
+                </a>
 
+                <a href="https://leetcode.com/u/AdityaDamare/" target="_blank" rel="noopener noreferrer" class="social-pill btn-magnetic" title="LeetCode">
+                    <svg viewBox="0 0 24 24"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .666-1.607 2.6 2.6 0 0 1 .388-.392l4.271-4.57 5.405-5.788c.54-.539.54-1.413.005-1.955A1.374 1.374 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></svg>
+                    <span>LeetCode</span>
+                </a>
             </div>
-
         </div>
 
+        <!-- 3D Holographic Avatar & Orbital HUD -->
+        <div class="hero-visual" id="heroVisual">
+            <div class="orbit-ring orbit-1"></div>
+            <div class="orbit-ring orbit-2"></div>
+            <div class="orbit-ring orbit-3"></div>
 
-        <!-- Animated Profile -->
-        <div class="hero-visual">
-
-            <div class="profile-ring ring1"></div>
-            <div class="profile-ring ring2"></div>
-
-            <div class="profile-circle">
-
-               <img src="profile.jpg" alt="Aditya damare">
-
+            <div class="avatar-wrapper">
+                <div class="avatar-glow-ring"></div>
+                <div class="avatar-inner-border"></div>
+                <img src="profile.jpg" alt="Aditya Damare" class="avatar-img">
             </div>
 
-            <div class="floating-card card1">
-                <span>💻</span>
-                <div>
+            <!-- Interactive Floating Badges -->
+            <div class="floating-badge badge-cpp">
+                <span class="badge-icon">💻</span>
+                <div class="badge-text">
                     <strong>C++</strong>
-                    <small>DSA</small>
+                    <small>DSA & Problem Solving</small>
                 </div>
             </div>
 
-            <div class="floating-card card2">
-                <span>🐍</span>
-                <div>
+            <div class="floating-badge badge-python">
+                <span class="badge-icon">🐍</span>
+                <div class="badge-text">
                     <strong>Python</strong>
-                    <small>AI / ML</small>
+                    <small>AI • ML • Data Science</small>
                 </div>
             </div>
 
-            <div class="floating-card card3">
-                <span>⚡</span>
-                <div>
+            <div class="floating-badge badge-sql">
+                <span class="badge-icon">⚡</span>
+                <div class="badge-text">
                     <strong>SQL</strong>
-                    <small>Database</small>
+                    <small>Relational Databases</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================
+         INTERACTIVE DEVELOPER TERMINAL (CLI)
+         ========================================================= -->
+    <section id="terminal" class="terminal-section reveal">
+        <div class="terminal-card">
+            <div class="terminal-header">
+                <div class="terminal-controls">
+                    <span class="control-dot dot-red"></span>
+                    <span class="control-dot dot-yellow"></span>
+                    <span class="control-dot dot-green"></span>
+                </div>
+                <div class="terminal-title">
+                    <span>⚡ aditya@developer-os: ~ (zsh)</span>
+                </div>
+                <div class="terminal-controls" style="opacity: 0.5;">
+                    <span style="font-size: 11px; font-family: var(--font-mono);">UTF-8</span>
                 </div>
             </div>
 
-        </div>
-
-    </section>
-
-
-    <!-- Stats -->
-    <section class="stats">
-
-        <div class="stat">
-            <h2 class="counter" data-target="120">0</h2>
-            <p>DSA Problems+</p>
-        </div>
-
-        <div class="stat">
-            <h2 class="counter" data-target="3">0</h2>
-            <p>Projects</p>
-        </div>
-
-        <div class="stat">
-            <h2 class="counter" data-target="6">0</h2>
-            <p>Core Skills</p>
-        </div>
-
-        <div class="stat">
-            <h2 class="counter" data-target="1">0</h2>
-            <p>Year Completed</p>
-        </div>
-
-    </section>
-
-         <!-- Resume -->
-    <section id="resume" class="section resume-section reveal">
-
-        <p class="section-label">MY RESUME</p>
-
-        <h2 class="section-title">
-            Let's <span>Connect</span>
-        </h2>
-
-        <div class="resume-card">
-
-        <div class="resume-icon">
-            📄
-        </div>
-
-        <div class="resume-content">
-
-            <h3>My Resume</h3>
-
-            <p>
-                Want to know more about my education, technical skills,
-                projects and coding journey?
-            </p>
-
-            <div class="resume-buttons">
-
-                <!-- Replace resume.pdf with your actual file -->
-                    <a href="resume.pdf"
-                        target="_blank"
-                        class="btn secondary">
-                        👁 View Resume
-                    </a>
-
-                    <a href="resume.pdf"
-                        download
-                        class="btn primary">
-                        ↓ Download Resume
-                    </a>
-
+            <div class="terminal-body" id="terminalBody">
+                <div class="terminal-output" id="terminalOutput">
+                    <div class="terminal-line info">
+                        Welcome to Aditya's Interactive CLI v2.4.0 (x86_64-portfolio)
+                    </div>
+                    <div class="terminal-line">
+                        Type <span class="highlight">help</span> or click command shortcuts below to explore:
+                    </div>
                 </div>
 
+                <div class="terminal-chips">
+                    <button class="chip-btn" data-cmd="help">help</button>
+                    <button class="chip-btn" data-cmd="about">about</button>
+                    <button class="chip-btn" data-cmd="skills">skills</button>
+                    <button class="chip-btn" data-cmd="projects">projects</button>
+                    <button class="chip-btn" data-cmd="coding">coding</button>
+                    <button class="chip-btn" data-cmd="matrix">matrix</button>
+                    <button class="chip-btn" data-cmd="contact">contact</button>
+                    <button class="chip-btn" data-cmd="clear">clear</button>
+                </div>
+
+                <div class="terminal-prompt-row">
+                    <span class="terminal-user">guest</span><span class="terminal-host">@aditya</span>:<span class="terminal-path">~</span>$&nbsp;
+                    <input type="text" id="terminalInput" class="terminal-input" placeholder="Type a command (e.g. skills, projects, matrix)..." autocomplete="off" spellcheck="false">
+                </div>
             </div>
-
         </div>
-
     </section>
 
+    <!-- =========================================================
+         STATS METRICS
+         ========================================================= -->
+    <section class="stats reveal">
+        <div class="stat-card spotlight-card">
+            <span class="stat-icon">🧠</span>
+            <div class="stat-number counter" data-target="120">0</div>
+            <div class="stat-label">DSA Problems Solved+</div>
+        </div>
 
-    <!-- About -->
+        <div class="stat-card spotlight-card">
+            <span class="stat-icon">🚀</span>
+            <div class="stat-number counter" data-target="3">0</div>
+            <div class="stat-label">Featured Projects</div>
+        </div>
+
+        <div class="stat-card spotlight-card">
+            <span class="stat-icon">⚡</span>
+            <div class="stat-number counter" data-target="6">0</div>
+            <div class="stat-label">Core Tech Stacks</div>
+        </div>
+
+        <div class="stat-card spotlight-card">
+            <span class="stat-icon">🎓</span>
+            <div class="stat-number counter" data-target="1">0</div>
+            <div class="stat-label">Year Completed+</div>
+        </div>
+    </section>
+
+    <!-- =========================================================
+         ABOUT SECTION
+         ========================================================= -->
     <section id="about" class="section reveal">
-
-        <p class="section-label">GET TO KNOW ME</p>
-
-        <h2 class="section-title">
-            About <span>Me</span>
-        </h2>
+        <div class="section-header">
+            <p class="section-label">GET TO KNOW ME</p>
+            <h2 class="section-title">About <span>Me</span></h2>
+            <p class="section-subtitle">Dedicated engineer on a quest to solve meaningful engineering problems.</p>
+        </div>
 
         <div class="about-grid">
+            <div class="about-story-card spotlight-card">
+                <div>
+                    <h3>Engineering clean software, learning relentlessly every day.</h3>
+                    <p>
+                        I am a Computer Engineering student in Pune, India, driven by deep curiosity for algorithms, 
+                        intelligent systems, and scalable software architecture.
+                    </p>
+                    <p>
+                        My core focus revolves around mastering <strong>Data Structures & Algorithms</strong> in C++, 
+                        while actively exploring <strong>Machine Learning</strong> and <strong>Data Science</strong> with Python.
+                    </p>
+                    <p>
+                        Whether building intelligent NLP resume analyzers, IoT charging safety hardware, or secure verification systems, 
+                        I thrive on taking abstract ideas and engineering them into reliable products.
+                    </p>
+                </div>
 
-            <div class="glass-card about-text">
-
-                <h3>Building today, learning every day.</h3>
-
-                <p>
-                    I am a Computer Engineering student with a strong
-                    interest in software development and problem solving.
-                </p>
-
-                <p>
-                    Currently, I am improving my Data Structures and
-                    Algorithms skills while exploring Data Science,
-                    Artificial Intelligence and Machine Learning.
-                </p>
-
-                <p>
-                    My goal is to build impactful technology and grow
-                    as a software engineer.
-                </p>
-
+                <div class="about-highlight-chips">
+                    <span class="highlight-chip">💡 Problem Solver</span>
+                    <span class="highlight-chip">🚀 Fast Learner</span>
+                    <span class="highlight-chip">🤖 AI & Data Enthusiast</span>
+                    <span class="highlight-chip">🌐 Web & Systems Builder</span>
+                </div>
             </div>
 
-
-            <div class="about-details glass-card">
-
-                <div>
-                    <span>🎓</span>
-                    <div>
-                        <small>Education</small>
+            <div class="about-details-card spotlight-card">
+                <div class="detail-row">
+                    <div class="detail-icon-wrap">🎓</div>
+                    <div class="detail-info">
+                        <small>Major</small>
                         <strong>Computer Engineering</strong>
                     </div>
                 </div>
 
-                <div>
-                    <span>📍</span>
-                    <div>
-                        <small>Pune</small>
-                        <strong>India</strong>
+                <div class="detail-row">
+                    <div class="detail-icon-wrap">📍</div>
+                    <div class="detail-info">
+                        <small>Location</small>
+                        <strong>Pune, Maharashtra, India</strong>
                     </div>
                 </div>
 
-                <div>
-                    <span>🎯</span>
-                    <div>
-                        <small>Focus</small>
-                        <strong>DSA • AI/ML • Data Science</strong>
+                <div class="detail-row">
+                    <div class="detail-icon-wrap">🎯</div>
+                    <div class="detail-info">
+                        <small>Primary Focus</small>
+                        <strong>DSA • AI/ML • Data Science • Full-Stack</strong>
                     </div>
                 </div>
 
+                <div class="detail-row">
+                    <div class="detail-icon-wrap">💬</div>
+                    <div class="detail-info">
+                        <small>Languages</small>
+                        <strong>English • Hindi • Marathi</strong>
+                    </div>
+                </div>
             </div>
-
         </div>
-
     </section>
 
+    <!-- =========================================================
+         EDUCATION & JOURNEY TIMELINE
+         ========================================================= -->
+    <section id="timeline" class="section reveal">
+        <div class="section-header">
+            <p class="section-label">MY ROADMAP</p>
+            <h2 class="section-title">Education & <span>Milestones</span></h2>
+            <p class="section-subtitle">A timeline of my academic milestones and technical progression.</p>
+        </div>
 
-    <!-- Skills -->
+        <div class="timeline-wrapper">
+            <div class="timeline-spine"></div>
+
+            <div class="timeline-item">
+                <div class="timeline-node"></div>
+                <div class="timeline-card spotlight-card">
+                    <span class="timeline-badge">2024 — PRESENT</span>
+                    <h4>B.E. in Computer Engineering</h4>
+                    <p>Pursuing undergraduate engineering degree in Pune. Deep diving into Operating Systems, DBMS, Computer Networks, and Object-Oriented Design.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-node"></div>
+                <div class="timeline-card spotlight-card">
+                    <span class="timeline-badge">2024 — 2025</span>
+                    <h4>DSA & Problem Solving Mastery</h4>
+                    <p>Solved 120+ algorithmic challenges across LeetCode, CodeChef, and Codeforces in C++, mastering Trees, Graphs, DP, and Hash Maps.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-node"></div>
+                <div class="timeline-card spotlight-card">
+                    <span class="timeline-badge">2025</span>
+                    <h4>Data Science & AI/ML Explorations</h4>
+                    <p>Engineered NLP Resume Scanner to match resumes with job descriptions using Python, pandas, and regex/NLP extraction algorithms.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-node"></div>
+                <div class="timeline-card spotlight-card">
+                    <span class="timeline-badge">2025</span>
+                    <h4>IoT & Hardware Project Innovation</h4>
+                    <p>Designed and built an Arduino-based Phone Overcharging Protector featuring automated relay cutoffs, LCD timers, and safety switching.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================
+         SKILLS SECTION
+         ========================================================= -->
     <section id="skills" class="section reveal">
+        <div class="section-header">
+            <p class="section-label">TECHNICAL TOOLBOX</p>
+            <h2 class="section-title">Skills & <span>Expertise</span></h2>
+            <p class="section-subtitle">Technologies and methodologies I leverage to build robust software.</p>
+        </div>
 
-        <p class="section-label">WHAT I WORK WITH</p>
+        <div class="skills-filter-wrapper">
+            <div class="filter-pills" id="skillsFilterPills">
+                <button class="filter-btn active" data-filter="all">All Skills</button>
+                <button class="filter-btn" data-filter="lang">Languages</button>
+                <button class="filter-btn" data-filter="ai">AI / Data</button>
+                <button class="filter-btn" data-filter="web">Web & DB</button>
+            </div>
+        </div>
 
-        <h2 class="section-title">
-            My <span>Skills</span>
-        </h2>
-
-        <div class="skills-grid">
-
-            <div class="skill-card">
-                <div class="skill-icon">C++</div>
-                <h3>C++</h3>
-                <p>Problem Solving & DSA</p>
+        <div class="skills-grid" id="skillsGrid">
+            <!-- C++ -->
+            <div class="skill-card spotlight-card" data-category="lang">
+                <div class="skill-header">
+                    <div class="skill-icon-pill">C++</div>
+                    <span class="skill-percent">85%</span>
+                </div>
+                <h3>C++ Programming</h3>
+                <p>Data Structures, Algorithms, STL, OOP, and Memory Management.</p>
                 <div class="skill-line">
-                    <span style="width:85%"></span>
+                    <span style="width: 85%"></span>
                 </div>
             </div>
 
-            <div class="skill-card">
-                <div class="skill-icon">🐍</div>
+            <!-- Python -->
+            <div class="skill-card spotlight-card" data-category="lang ai">
+                <div class="skill-header">
+                    <div class="skill-icon-pill">🐍</div>
+                    <span class="skill-percent">78%</span>
+                </div>
                 <h3>Python</h3>
-                <p>Programming & Data Science</p>
+                <p>Data Analysis, Scripting, Automation, NumPy, Pandas, Scikit-Learn.</p>
                 <div class="skill-line">
-                    <span style="width:75%"></span>
+                    <span style="width: 78%"></span>
                 </div>
             </div>
 
-            <div class="skill-card">
-                <div class="skill-icon">SQL</div>
-                <h3>SQL</h3>
-                <p>Database Management</p>
+            <!-- SQL -->
+            <div class="skill-card spotlight-card" data-category="web">
+                <div class="skill-header">
+                    <div class="skill-icon-pill">⚡</div>
+                    <span class="skill-percent">78%</span>
+                </div>
+                <h3>SQL & Databases</h3>
+                <p>Relational Schemas, Complex Queries, Joins, Indexing, and SQLite.</p>
                 <div class="skill-line">
-                    <span style="width:78%"></span>
+                    <span style="width: 78%"></span>
                 </div>
             </div>
 
-            <div class="skill-card">
-                <div class="skill-icon">🌐</div>
-                <h3>HTML & CSS</h3>
-                <p>Web Development</p>
+            <!-- HTML & CSS -->
+            <div class="skill-card spotlight-card" data-category="web">
+                <div class="skill-header">
+                    <div class="skill-icon-pill">🌐</div>
+                    <span class="skill-percent">88%</span>
+                </div>
+                <h3>HTML5 & CSS3</h3>
+                <p>Responsive Layouts, Glassmorphism, CSS Grid, Flexbox, & Animations.</p>
                 <div class="skill-line">
-                    <span style="width:85%"></span>
+                    <span style="width: 88%"></span>
                 </div>
             </div>
 
-            <div class="skill-card">
-                <div class="skill-icon">JS</div>
-                <h3>JavaScript</h3>
-                <p>Interactive Web Development</p>
+            <!-- JavaScript -->
+            <div class="skill-card spotlight-card" data-category="web">
+                <div class="skill-header">
+                    <div class="skill-icon-pill">JS</div>
+                    <span class="skill-percent">72%</span>
+                </div>
+                <h3>JavaScript (ES6+)</h3>
+                <p>DOM Manipulation, Asynchronous APIs, Canvas Animations, Event Handlers.</p>
                 <div class="skill-line">
-                    <span style="width:65%"></span>
+                    <span style="width: 72%"></span>
                 </div>
             </div>
 
-            <div class="skill-card">
-                <div class="skill-icon">🧠</div>
-                <h3>AI / ML</h3>
-                <p>Learning & Exploring</p>
+            <!-- AI / ML -->
+            <div class="skill-card spotlight-card" data-category="ai">
+                <div class="skill-header">
+                    <div class="skill-icon-pill">🧠</div>
+                    <span class="skill-percent">65%</span>
+                </div>
+                <h3>AI & Machine Learning</h3>
+                <p>Supervised Learning, NLP Text Preprocessing, Model Evaluation.</p>
                 <div class="skill-line">
-                    <span style="width:55%"></span>
+                    <span style="width: 65%"></span>
                 </div>
             </div>
-
         </div>
-
     </section>
 
-
-    <!-- Projects -->
+    <!-- =========================================================
+         PROJECTS SECTION
+         ========================================================= -->
     <section id="projects" class="section reveal">
-
-        <p class="section-label">MY RECENT WORK</p>
-
-        <h2 class="section-title">
-            Featured <span>Projects</span>
-        </h2>
-
-        <div class="projects-grid">
-
-            <article class="project-card">
-
-                <div class="project-top">
-                    <span class="project-number">01</span>
-                    <span class="project-symbol">↗</span>
-                </div>
-
-                <div class="project-icon big">📄</div>
-
-                <h3>Resume Scanner</h3>
-
-                <p>
-                    Python-based resume analysis application that
-                    extracts information and compares resume skills
-                    with job requirements.
-                </p>
-
-                <div class="tags">
-                    <span>Python</span>
-                    <span>NLP</span>
-                    <span>SQLite</span>
-                </div>
-
-                <a href="#" class="project-link">
-                    Explore Project →
-                </a>
-
-            </article>
-
-
-            <article class="project-card">
-
-                <div class="project-top">
-                    <span class="project-number">02</span>
-                    <span class="project-symbol">↗</span>
-                </div>
-
-                <div class="project-icon big">🔐</div>
-
-                <h3>EduVerify</h3>
-
-                <p>
-                    QR-based academic credential verification platform
-                    designed to help verify educational certificates.
-                </p>
-
-                <div class="tags">
-                    <span>Web</span>
-                    <span>QR</span>
-                    <span>Verification</span>
-                </div>
-
-                <a href="#" class="project-link">
-                    Explore Project →
-                </a>
-
-            </article>
-
-
-            <article class="project-card">
-
-                <div class="project-top">
-                    <span class="project-number">03</span>
-                    <span class="project-symbol">↗</span>
-                </div>
-
-                <div class="project-icon big">⚡</div>
-
-                <h3>Phone Overcharging Protector</h3>
-
-                <p>
-                    Arduino-based charging protection system using
-                    relay, LCD display, timer and automatic switching.
-                </p>
-
-                <div class="tags">
-                    <span>Arduino</span>
-                    <span>C++</span>
-                    <span>IoT</span>
-                </div>
-
-                <a href="#" class="project-link">
-                    Explore Project →
-                </a>
-
-            </article>
-
+        <div class="section-header">
+            <p class="section-label">PORTFOLIO WORK</p>
+            <h2 class="section-title">Featured <span>Projects</span></h2>
+            <p class="section-subtitle">Real-world applications engineered with precision and clean architecture.</p>
         </div>
 
+        <div class="skills-filter-wrapper">
+            <div class="filter-pills" id="projectsFilterPills">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="ai">AI / NLP</button>
+                <button class="filter-btn" data-filter="web">Web & Security</button>
+                <button class="filter-btn" data-filter="iot">IoT & Hardware</button>
+            </div>
+        </div>
+
+        <div class="projects-grid" id="projectsGrid">
+            <!-- Project 1: Resume Scanner -->
+            <article class="project-card spotlight-card" data-category="ai">
+                <div>
+                    <div class="project-top">
+                        <span class="project-number">01</span>
+                        <span class="project-type-badge">AI / NLP</span>
+                    </div>
+
+                    <div class="project-icon-large">📄</div>
+
+                    <h3>AI Resume Scanner</h3>
+
+                    <p>
+                        Intelligent Python-based resume analysis application that parses PDF/DOCX resumes, 
+                        extracts skills and experience via NLP, and scores resume relevance against job descriptions.
+                    </p>
+
+                    <div class="project-tags">
+                        <span class="tag-badge">Python</span>
+                        <span class="tag-badge">NLP</span>
+                        <span class="tag-badge">SQLite</span>
+                        <span class="tag-badge">Text Mining</span>
+                    </div>
+                </div>
+
+                <div class="project-actions">
+                    <a href="https://github.com/AdityaDamare123" target="_blank" rel="noopener noreferrer" class="project-link">
+                        <span>View Source</span> →
+                    </a>
+
+                    <a href="https://github.com/AdityaDamare123" target="_blank" rel="noopener noreferrer" class="project-github-btn" title="GitHub Repo">
+                        <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Project 2: EduVerify -->
+            <article class="project-card spotlight-card" data-category="web">
+                <div>
+                    <div class="project-top">
+                        <span class="project-number">02</span>
+                        <span class="project-type-badge">Security & Web</span>
+                    </div>
+
+                    <div class="project-icon-large">🔐</div>
+
+                    <h3>EduVerify System</h3>
+
+                    <p>
+                        Tamper-proof academic credential verification platform featuring encrypted QR generation 
+                        and instant validation portal to eliminate certificate forgery in institutions.
+                    </p>
+
+                    <div class="project-tags">
+                        <span class="tag-badge">JavaScript</span>
+                        <span class="tag-badge">QR Security</span>
+                        <span class="tag-badge">HTML5/CSS3</span>
+                        <span class="tag-badge">Verification</span>
+                    </div>
+                </div>
+
+                <div class="project-actions">
+                    <button class="project-details-btn btn-magnetic" data-project="eduverify" type="button">View Details</button>
+
+                    <a href="https://github.com/AdityaDamare123" target="_blank" rel="noopener noreferrer" class="project-link">
+                        <span>View Source</span> →
+                    </a>
+
+                    <a href="https://github.com/AdityaDamare123" target="_blank" rel="noopener noreferrer" class="project-github-btn" title="GitHub Repo">
+                        <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Project 3: Phone Overcharging Protector -->
+            <article class="project-card spotlight-card" data-category="iot">
+                <div>
+                    <div class="project-top">
+                        <span class="project-number">03</span>
+                        <span class="project-type-badge">IoT & Embedded</span>
+                    </div>
+
+                    <div class="project-icon-large">⚡</div>
+
+                    <h3>Overcharge Protector</h3>
+
+                    <p>
+                        Microcontroller-based smart charging safety hardware utilizing Arduino, 5V relay module, 
+                        and 16x2 LCD display to automatically cutoff power upon full battery threshold.
+                    </p>
+
+                    <div class="project-tags">
+                        <span class="tag-badge">Arduino</span>
+                        <span class="tag-badge">C++ Embedded</span>
+                        <span class="tag-badge">IoT</span>
+                        <span class="tag-badge">Hardware</span>
+                    </div>
+                </div>
+
+                <div class="project-actions">
+                    <button class="project-details-btn btn-magnetic" data-project="overcharge-protector" type="button">View Details</button>
+
+                    <a href="https://github.com/AdityaDamare123" target="_blank" rel="noopener noreferrer" class="project-link">
+                        <span>View Source</span> →
+                    </a>
+
+                    <a href="https://github.com/AdityaDamare123" target="_blank" rel="noopener noreferrer" class="project-github-btn" title="GitHub Repo">
+                        <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    </a>
+                </div>
+            </article>
+        </div>
     </section>
 
-
-    <!-- Coding -->
+    <!-- =========================================================
+         CODING PROFILES SECTION
+         ========================================================= -->
     <section id="coding" class="section reveal">
-
-        <p class="section-label">MY CODING JOURNEY</p>
-
-        <h2 class="section-title">
-            Coding <span>Profiles</span>
-        </h2>
+        <div class="section-header">
+            <p class="section-label">PROBLEM SOLVING MATRIX</p>
+            <h2 class="section-title">Coding <span>Profiles</span></h2>
+            <p class="section-subtitle">Track my algorithmic and open-source activities across competitive platforms.</p>
+        </div>
 
         <div class="coding-grid">
-
-            <a href="https://leetcode.com/u/AdityaDamare/" class="coding-card">
-                <div class="coding-logo">LC</div>
-                <div>
-                    <h3>LeetCode</h3>
-                    <p>DSA Problem Solving</p>
+            <!-- LeetCode -->
+            <a href="https://leetcode.com/u/AdityaDamare/" target="_blank" rel="noopener noreferrer" class="coding-card spotlight-card">
+                <div class="coding-card-left">
+                    <div class="coding-logo-pill">LC</div>
+                    <div class="coding-info">
+                        <h3>LeetCode</h3>
+                        <p>Data Structures & Algorithm Challenges</p>
+                        <span class="coding-stats-pill">120+ Solved • Consistent Streak</span>
+                    </div>
                 </div>
-                <span>↗</span>
+                <div class="coding-arrow">↗</div>
             </a>
 
-            <a href="https://www.codechef.com/users/span_deed_19" class="coding-card">
-                <div class="coding-logo">CC</div>
-                <div>
-                    <h3>CodeChef</h3>
-                    <p>Competitive Programming</p>
+            <!-- CodeChef -->
+            <a href="https://www.codechef.com" target="_blank" rel="noopener noreferrer" class="coding-card spotlight-card">
+                <div class="coding-card-left">
+                    <div class="coding-logo-pill">CC</div>
+                    <div class="coding-info">
+                        <h3>CodeChef</h3>
+                        <p>Competitive Programming Contests</p>
+                        <span class="coding-stats-pill">Div 3 Rated Contender</span>
+                    </div>
                 </div>
-                <span>↗</span>
+                <div class="coding-arrow">↗</div>
             </a>
 
-            <a href="https://codeforces.com/contests/with/AdityaDamare" class="coding-card">
-                <div class="coding-logo">CF</div>
-                <div>
-                    <h3>Codeforces</h3>
-                    <p>Problem Solving</p>
+            <!-- Codeforces -->
+            <a href="https://codeforces.com" target="_blank" rel="noopener noreferrer" class="coding-card spotlight-card">
+                <div class="coding-card-left">
+                    <div class="coding-logo-pill">CF</div>
+                    <div class="coding-info">
+                        <h3>Codeforces</h3>
+                        <p>Math & Logic Problem Solving</p>
+                        <span class="coding-stats-pill">Active Contestant</span>
+                    </div>
                 </div>
-                <span>↗</span>
+                <div class="coding-arrow">↗</div>
             </a>
 
-            <a href="https://github.com/AdityaDamare123" class="coding-card">
-                <div class="coding-logo">GH</div>
-                <div>
-                    <h3>GitHub</h3>
-                    <p>Projects & Open Source</p>
+            <!-- GitHub -->
+            <a href="https://github.com/AdityaDamare123" target="_blank" rel="noopener noreferrer" class="coding-card spotlight-card">
+                <div class="coding-card-left">
+                    <div class="coding-logo-pill">GH</div>
+                    <div class="coding-info">
+                        <h3>GitHub</h3>
+                        <p>Open Source & Project Repositories</p>
+                        <span class="coding-stats-pill">Continuous Commits</span>
+                    </div>
                 </div>
-                <span>↗</span>
+                <div class="coding-arrow">↗</div>
             </a>
+        </div>
+    </section>
 
+    <!-- =========================================================
+         RESUME SECTION
+         ========================================================= -->
+    <section id="resume" class="section resume-section reveal">
+        <div class="section-header">
+            <p class="section-label">OFFICIAL CREDENTIALS</p>
+            <h2 class="section-title">My <span>Resume</span></h2>
+            <p class="section-subtitle">Get the detailed rundown of my technical profile, education, and achievements.</p>
         </div>
 
+        <div class="resume-card spotlight-card">
+            <div class="resume-icon-wrap">📄</div>
+            
+            <div class="resume-content">
+                <h3>Aditya Damare — Resume</h3>
+                <p>
+                    Looking for a driven, fast-learning engineering intern or junior developer? 
+                    Download or view my complete resume detailing my academic coursework, technical stack, problem-solving history, and hands-on projects.
+                </p>
+
+                <div class="resume-buttons">
+                    <a href="resume.pdf" target="_blank" class="btn btn-secondary btn-magnetic">
+                        👁 View Resume
+                    </a>
+
+                    <a href="resume.pdf" download="Aditya_Damare_Resume.pdf" class="btn btn-primary btn-shimmer btn-magnetic">
+                        ↓ Download PDF
+                    </a>
+                </div>
+            </div>
+        </div>
     </section>
 
-
-    <!-- Contact -->
+    <!-- =========================================================
+         CONTACT SECTION
+         ========================================================= -->
     <section id="contact" class="section contact-section reveal">
+        <div class="contact-card spotlight-card">
+            <p class="section-label">LET'S COLLABORATE</p>
+            <h2>Let's build something <span>extraordinary.</span></h2>
+            <p>
+                I am actively seeking internship opportunities, collaborative open-source projects, and engineering challenges.
+                My inbox is always open.
+            </p>
 
-        <p class="section-label">HAVE A PROJECT IN MIND?</p>
+            <form class="contact-form" id="contactForm">
+                <div class="form-row">
+                    <label>
+                        <span>Name</span>
+                        <input type="text" name="name" placeholder="Your name" required>
+                    </label>
 
-        <h2>
-            Let's build something <span>great.</span>
-        </h2>
+                    <label>
+                        <span>Email</span>
+                        <input type="email" name="email" placeholder="you@example.com" required>
+                    </label>
+                </div>
 
-        <p>
-            I'm always interested in learning, collaborating and
-            working on interesting technology projects.
-        </p>
+                <label>
+                    <span>Message</span>
+                    <textarea name="message" rows="5" placeholder="Tell me about your project, idea, or opportunity..." required></textarea>
+                </label>
 
-        <a href="mailto:adityad8314@gmail.com" class="btn primary">
-            Say Hello ✉
-        </a>
+                <div class="contact-channels">
+                    <button type="submit" class="btn btn-primary btn-shimmer btn-magnetic">
+                        Send Message ✉
+                    </button>
 
+                    <button type="button" class="btn btn-secondary btn-magnetic" id="copyContactBtn" data-copy="adityad8314@gmail.com">
+                        📋 Copy Email Address
+                    </button>
+                </div>
+            </form>
+        </div>
     </section>
 
+    <div class="project-modal" id="projectModal" aria-hidden="true">
+        <div class="project-modal-backdrop" data-close-modal="true"></div>
+        <div class="project-modal-content spotlight-card" role="dialog" aria-modal="true" aria-labelledby="projectModalTitle">
+            <button class="project-modal-close" type="button" aria-label="Close project details">✕</button>
+            <div class="project-modal-icon" id="projectModalIcon">📄</div>
+            <p class="section-label project-modal-kicker">PROJECT OVERVIEW</p>
+            <h3 id="projectModalTitle">Project Title</h3>
+            <p id="projectModalDescription"></p>
+            <div class="project-modal-meta" id="projectModalMeta"></div>
+            <div class="project-modal-footer">
+                <a href="https://github.com/AdityaDamare123" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-shimmer btn-magnetic">
+                    View Source
+                </a>
+                <button type="button" class="btn btn-secondary btn-magnetic" data-close-modal="true">Close</button>
+            </div>
+        </div>
+    </div>
 
-    <!-- Footer -->
+    <!-- =========================================================
+         FOOTER
+         ========================================================= -->
     <footer>
+        <div class="footer-content">
+            <div>
+                © 2026 <strong>Aditya Damare</strong>. Built with precision and passion.
+            </div>
 
-        <p>
-            © 2026 Aditya Damare
-        </p>
-
-        <p>
-            Built with HTML • CSS • JavaScript
-        </p>
-
+            <div class="footer-tech-pill">
+                <span>⚡ Engineered with Vanilla HTML • CSS • JavaScript</span>
+            </div>
+        </div>
     </footer>
 
-
+    <!-- JavaScript Application Logic -->
     <script src="script.js"></script>
-    
-
 </body>
 </html>
