@@ -25,8 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
         updateParticleThemeColors();
     }
 
-    applyTheme(savedTheme);
-
     themeDots.forEach(dot => {
         dot.addEventListener("click", () => {
             applyTheme(dot.dataset.theme);
@@ -151,6 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
         else particleColor = "rgba(0, 229, 255, ";
     }
     updateParticleThemeColors();
+    applyTheme(savedTheme);
 
     const mousePos = {
         x: null,
@@ -359,13 +358,11 @@ Passionate about Data Structures, Algorithms, AI/ML, and turning ideas into tang
 • <span class="success">Languages:</span> C++ (DSA Mastery), Python (AI/ML), JavaScript (ES6+), SQL
 • <span class="success">Web & DB:</span> HTML5, CSS3, Modern UI/UX, SQLite, RESTful concepts
 • <span class="success">AI / ML:</span> Natural Language Processing (NLP), Data Analysis, Pandas, NumPy
-• <span class="success">Hardware:</span> Arduino Microcontrollers, IoT Relay automation
         `,
         projects: () => `
 <span class="highlight">Featured Engineering Projects:</span>
 1. <span class="info">AI Resume Scanner</span> — Python NLP tool comparing resume skills with job postings.
 2. <span class="info">EduVerify Platform</span> — Tamper-proof academic credential verification via QR cryptography.
-3. <span class="info">Phone Overcharge Protector</span> — Arduino IoT safety hardware with automated power cutoff.
         `,
         coding: () => `
 <span class="highlight">Competitive Programming Matrix:</span>
@@ -605,11 +602,11 @@ Passionate about Data Structures, Algorithms, AI/ML, and turning ideas into tang
             description: "A tamper-proof academic verification platform built around encrypted QR credential generation and validation. It helps institutions and recruiters confirm certificate authenticity with a faster, more reliable verification flow.",
             tags: ["JavaScript", "QR Security", "HTML5/CSS3", "Verification"]
         },
-        "overcharge-protector": {
-            icon: "⚡",
-            title: "Overcharge Protector",
-            description: "A microcontroller-based safety hardware project that cuts off power automatically when a device reaches its threshold. It demonstrates practical embedded design, power management, and real-world safety monitoring.",
-            tags: ["Arduino", "C++ Embedded", "IoT", "Hardware"]
+        "summarizer-hf": {
+            icon: "📝",
+            title: "Summarizer-HF",
+            description: "A natural language processing project that uses Hugging Face transformer models to generate concise summaries from long-form text.",
+            tags: ["Python", "Hugging Face", "Transformers", "NLP"]
         }
     };
 
